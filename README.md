@@ -1,4 +1,4 @@
-# APP NAME: bleApp-android
+# NAME: bleApp-android
 # SYSTEM: Support Android 4.4.2 +
 # VERSION: 1.0.0.0
 # USE: Used for transmission between Bluetooth devices and Android phones, and save the file to phone
