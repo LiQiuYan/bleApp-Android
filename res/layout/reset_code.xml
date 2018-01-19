@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#e8ebee"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        style="@style/MyLin"
+        android:background="@drawable/edit"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/frame_button_p"
+            android:gravity="center_vertical" >
+
+             <TextView
+                 android:id="@+id/textView1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:text="@string/inputcode"
+                 android:textSize="20sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#e8ebee"
+        android:paddingLeft="@dimen/space_15"
+        android:paddingRight="@dimen/space_15">
+
+        <EditText
+                android:id="@+id/code"
+                android:layout_width="100dip"
+                android:layout_height="40dip"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="50dip"
+                android:layout_toLeftOf="@+id/send"
+                android:paddingLeft="5dip"
+                android:maxLength="6"
+                android:background="@drawable/edit"
+                android:inputType="number"
+                android:hint="@string/inputcode"
+                android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/send"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dip"
+        android:background="@drawable/edit"
+        android:textColor="#2A66FF"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:cursorVisible="false"
+        android:text="@string/send"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+            android:id="@+id/next"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_below="@+id/code"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/login_btn_selector"
+            android:text="@string/xiayibu"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+    
+    
+    
+
+    <TextView
+        android:id="@+id/tishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/next"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:textColor="#7b747c"
+        android:maxLines="2"
+        android:text="" />
+
+    <ProgressBar
+        android:id="@+id/bar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"            
+        android:visibility="gone"
+        android:indeterminateDrawable="@anim/loading"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+	</RelativeLayout>
+</LinearLayout>
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/id_back"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#eee"
+        android:gravity="center|right" >
+
+        <ImageView
+            android:id="@+id/id_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_trash" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/id_front"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/hmessage_listitem_icon"
+                style="@style/record_item_image" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/hmessage_listitem_sendTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="@color/listitem_record_gray"
+                    android:textSize="@dimen/text_size_12" />
+
+                <TextView
+                    android:id="@+id/hmessage_listitem_sender"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="@color/listitem_record_gray"
+                    android:textSize="@dimen/text_size_12" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/hmessage_listitem_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dip"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	tools:context=".ui.Main"
+	tools:ignore="HardcodedText" >
+
+<ViewSwitcher
+    android:id="@+id/ecgMain_view_switcher"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".ui.Main"
+    tools:ignore="HardcodedText"
+	android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/ecgMain_LinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@color/title_blue">
+            
+            <ImageView
+				android:id="@+id/status_imgview"
+				android:layout_width="wrap_content"
+				android:layout_height="60dp"
+				android:layout_gravity="center"/>
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/ecgSimpleXYPlot"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                androidPlot.domainLabelWidget.labelPaint.textSize="0dp"
+                androidPlot.graphWidget.domainLabelPaint.textSize="0dp"
+                androidPlot.graphWidget.domainOriginLabelPaint.textSize="0dp"
+                androidPlot.graphWidget.rangeLabelPaint.textSize="0dp"
+                androidPlot.graphWidget.rangeOriginLabelPaint.textSize="0dp"
+                androidPlot.legendWidget.heightMetric.value="5dp"
+                androidPlot.legendWidget.iconSizeMetrics.heightMetric.value="0dp"
+                androidPlot.legendWidget.iconSizeMetrics.widthMetric.value="0dp"
+                androidPlot.legendWidget.positionMetrics.anchor="right_bottom"
+                androidPlot.legendWidget.textPaint.textSize="0dp"
+                androidPlot.rangeLabelWidget.labelPaint.textSize="0dp"
+                androidPlot.titleWidget.labelPaint.textSize="1dp"
+                androidplot.renderMode="use_background_thread"
+                android:visibility="gone"/>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:padding="10.0dip"
+                    android:paddingTop="0dip"
+                    android:text="00:00:00"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+					android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/monitor_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:paddingTop="0dip"
+                    android:text="00:00:00"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+					android:visibility="gone"/>
+
+            </RelativeLayout>
+             <LinearLayout
+                android:id="@+id/panelLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/scale_panel"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+              </LinearLayout>
+              
+             
+            <com.healthme.app.ui.RPM
+                android:id="@+id/rpm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp" 
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+				android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ecgBattIcon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5.0dip"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/online_off" />
+
+                <ImageView
+                    android:id="@+id/ecgBattIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10.0dip"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/power_high" />
+
+                <ImageView
+                    android:id="@+id/ecgBattIcon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_toLeftOf="@id/ecgBattIcon"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/electrode_off" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:scrollbars="vertical"
+			android:orientation="vertical"
+			android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/ecgRun_status"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/bg_gray"
+                android:gravity="center"
+                android:orientation="vertical"
+				android:visibility="invisible">
+
+                <LinearLayout
+                    android:id="@+id/pvc_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" 
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/text_pvc"
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:text="室性早搏"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ProgressBar android:id="@+id/pvc_progress"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="0dp"
+				        android:layout_height="10dp"
+				        android:layout_weight="1"
+				        android:max="20"
+				        android:progress="90"
+				        android:progressDrawable="@drawable/pvc_bar"
+				        />
+                    <TextView
+                        android:id="@+id/num_pvc"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="10000"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ImageView
+	                    android:id="@+id/detail_pvc"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:scaleType="centerInside"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/forward" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/svpb_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:background="@color/white" >
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:text="室上性早搏"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ProgressBar android:id="@+id/svpb_progress"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="0dp"
+				        android:layout_height="10dp"
+				        android:layout_weight="1"
+				        android:max="20"
+				        android:progressDrawable="@drawable/svpb_bar"
+				        android:progress="64"
+				        />
+                    <TextView
+                        android:id="@+id/num_svpb"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="10000"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ImageView
+	                    android:id="@+id/detail_svpb"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:scaleType="centerInside"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/forward" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/longRR_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:text="长RR间隔"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ProgressBar android:id="@+id/longRR_progress"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="0dp"
+				        android:layout_height="10dp"
+				        android:layout_weight="1"
+				        android:max="20"
+				        android:progress="50"
+				        android:progressDrawable="@drawable/longrr_bar"
+				        />
+                    <TextView
+                        android:id="@+id/num_longRR"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ImageView
+	                    android:id="@+id/detail_longRR"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:scaleType="centerInside"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/forward" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pause_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:text="停         博"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ProgressBar android:id="@+id/pause_progress"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="0dp"
+				        android:layout_height="10dp"
+				        android:layout_weight="1"
+				        android:max="20"
+				        android:progress="80"
+				        android:progressDrawable="@drawable/pause_bar"
+				        />
+                    <TextView
+                        android:id="@+id/num_pause"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="7648"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ImageView
+	                    android:id="@+id/detail_pause"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:scaleType="centerInside"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/forward" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/af_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:text="房         颤"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ProgressBar android:id="@+id/af_progress"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="0dp"
+				        android:layout_height="10dp"
+				        android:layout_weight="1"
+				        android:max="20"
+				        android:progress="40"
+				        android:progressDrawable="@drawable/af_bar"
+				        />
+                    <TextView
+                        android:id="@+id/num_af"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="2346"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16"
+                        android:gravity="center_vertical"/>
+                    <ImageView
+	                    android:id="@+id/detail_af"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:scaleType="centerInside"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/forward" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bt_Starting"
+        android:layout_width="100.0dip"
+        android:layout_height="100.0dip"
+        android:layout_gravity="center"
+        android:background="@anim/login_loading" />
+
+</ViewSwitcher>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:visibility="visible">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="3"
+			android:background="@android:color/transparent"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="7"
+			android:background="@color/body_bg"
+			android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20.0dip">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="horizontal">
+			<TextView
+				android:id="@+id/text1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10.0dip"
+				android:duplicateParentState="true"
+				android:text="NATIVE: "
+				android:textColor="@color/btset_text"
+				android:textSize="@dimen/text_size_16" />
+
+			<TextView
+				android:id="@+id/cur_device"
+				android:layout_toRightOf="@+id/text1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="@color/btset_text"
+				android:textSize="@dimen/text_size_16" />
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/cur_status"
+				android:layout_toRightOf="@+id/cur_device"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20dp"
+				android:textColor="@color/blue"
+				tools:text="CONNECTED"
+				android:layout_alignParentRight="true"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10.0dip"
+			android:gravity="center_vertical" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10.0dip"
+				android:duplicateParentState="true"
+				android:text="SELECTED: "
+				android:textColor="@color/btset_text"
+				android:textSize="@dimen/text_size_16" />
+
+			<TextView
+				android:id="@+id/selected_device"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textColor="@color/btset_text"
+				android:textSize="@dimen/text_size_16" />
+		</LinearLayout>
+
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10.0dip"
+	        android:gravity="center_vertical" >
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10.0dip"
+	            android:duplicateParentState="true"
+	            android:text="FILE_LOCATION: "
+	            android:textColor="@color/btset_text"
+	            android:textSize="@dimen/text_size_14" />
+	
+	        <TextView
+	            android:id="@+id/file_location"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"                  
+	            android:textColor="@color/btset_text"
+	            android:textSize="@dimen/text_size_16" />
+	    </LinearLayout>
+
+		<com.healthme.app.widget.PullToRefreshListView
+			android:id="@+id/frame_listview_question"
+			android:layout_marginTop="30dip"
+			style="@style/widget_listview"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+		</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>

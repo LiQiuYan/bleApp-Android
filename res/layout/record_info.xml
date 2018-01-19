@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/body_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_header" />
+
+    <LinearLayout
+        style="@style/record_detail_row"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="开始时间: " />
+
+        <TextView
+            android:id="@+id/record_start_time"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/record_detail_row" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="结束时间: " />
+
+        <TextView
+            android:id="@+id/record_end_time"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/record_detail_row" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="检测时长: " />
+
+        <TextView
+            android:id="@+id/record_duration"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/record_detail_row" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="平均心率: " />
+
+        <TextView
+            android:id="@+id/record_rate_avg"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/record_detail_row" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="最大心率: " />
+
+        <TextView
+            android:id="@+id/record_rate_max"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/record_detail_row" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="最小心率: " />
+
+        <TextView
+            android:id="@+id/record_rate_min"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/record_detail_row" >
+
+        <TextView
+            style="@style/record_detail_row_name"
+            android:text="总心搏数: " />
+
+        <TextView
+            android:id="@+id/total_heartbeat_num"
+            style="@style/record_detail_row_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/record_pvc_info"
+            style="@style/record_detail_subitem" >
+
+            <TextView
+                android:id="@+id/record_pvc_num"
+                style="@style/record_detail_subitem_value"
+                android:background="@drawable/square_pvc" />
+
+            <TextView
+                style="@style/record_detail_subitem_name"
+                android:text="室早" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/record_svpb_info"
+            style="@style/record_detail_subitem" >
+
+            <TextView
+                android:id="@+id/record_svpb_num"
+                style="@style/record_detail_subitem_value"
+                android:background="@drawable/square_svpb" />
+
+            <TextView
+                style="@style/record_detail_subitem_name"
+                android:text="室上早" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/record_pause_info"
+            style="@style/record_detail_subitem" >
+
+            <TextView
+                android:id="@+id/record_pause_num"
+                style="@style/record_detail_subitem_value"
+                android:background="@drawable/square_pause" />
+
+            <TextView
+                style="@style/record_detail_subitem_name"
+                android:text="停博" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/record_afib_info"
+            style="@style/record_detail_subitem" >
+
+            <TextView
+                android:id="@+id/record_afib_num"
+                style="@style/record_detail_subitem_value"
+                android:background="@drawable/square_afib" />
+
+            <TextView
+                style="@style/record_detail_subitem_name"
+                android:text="房扑/房颤" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

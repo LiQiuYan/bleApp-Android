@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="7dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
+    android:paddingTop="8dip" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/record_listitem_icon"
+            style="@style/record_item_image" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/record_listitem_time_range"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web|email"
+            android:textColor="@color/listitem_record_gray"            
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/record_listitem_rate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+
+        <TextView
+            android:id="@+id/record_listitem_summary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+    </LinearLayout>
+
+</LinearLayout>

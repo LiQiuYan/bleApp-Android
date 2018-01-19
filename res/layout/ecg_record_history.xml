@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/body_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_header" />
+
+    <com.healthme.app.widget.PullToRefreshListView
+        android:id="@+id/listview_record"
+        style="@style/record_listview" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/body_bg" />
+
+</LinearLayout>

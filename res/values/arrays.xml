@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+   
+    <string-array name="head_titles">
+        <item>心电图检测</item>
+        <!-- <item>蓝牙</item> -->
+        <item>检测记录</item>
+        <item>我的信息</item>       
+    </string-array>   
+
+</resources>

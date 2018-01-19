@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" android:focusable="true" android:id="@+id/menu_main">
+
+    <LinearLayout style="@style/action_menu_content_top" >
+
+        <LinearLayout android:id="@+id/linear_record" style="@style/action_menu_row" >
+
+            <ImageView                
+                style="@style/action_menu_row_icon"
+                android:src="@drawable/menu_record" />
+
+            <TextView                
+                style="@style/action_menu_row_text"
+                android:text="@string/menu_record" />
+        </LinearLayout>
+
+        <View style="@style/action_menu_line" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/action_menu_content_middle" >
+
+        <LinearLayout android:id="@+id/linear_btset" style="@style/action_menu_row" >
+
+            <ImageView                
+                style="@style/action_menu_row_icon"
+                android:src="@drawable/menu_btdev" />
+
+            <TextView                
+                style="@style/action_menu_row_text"
+                android:text="@string/menu_btdev" />
+        </LinearLayout>
+
+        <View style="@style/action_menu_line" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/action_menu_content_middle" >
+
+        <LinearLayout android:id="@+id/linear_set" style="@style/action_menu_row" >
+
+            <ImageView                
+                style="@style/action_menu_row_icon"
+                android:src="@drawable/menu_set" />
+
+            <TextView                
+                style="@style/action_menu_row_text"
+                android:text="@string/menu_set" />
+        </LinearLayout>
+
+        <View style="@style/action_menu_line" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/action_menu_content_bottom" >
+
+        <LinearLayout android:id="@+id/linear_logout" style="@style/action_menu_row" >
+
+            <ImageView                
+                style="@style/action_menu_row_icon"
+                android:src="@drawable/menu_logout" />
+
+            <TextView                
+                style="@style/action_menu_row_text"
+                android:text="@string/menu_logout" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

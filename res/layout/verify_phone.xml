@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#e8ebee"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        style="@style/MyLin"
+        android:background="@drawable/edit"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/frame_button_p"
+            android:gravity="center_vertical" >
+
+             <TextView
+                 android:id="@+id/textView1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:text="@string/verify_phone"
+                 android:textSize="20sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/verifyLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#e8ebee"
+        android:paddingLeft="@dimen/space_15"
+        android:paddingRight="@dimen/space_15">
+
+        <EditText
+            android:id="@+id/phone_addr"
+            android:layout_width="80dip"
+            android:layout_height="40dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/edit"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dip"
+            android:layout_toRightOf="@+id/phone_addr"
+            android:background="@drawable/edit"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="@string/inputphone"
+            android:paddingLeft="5dip" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_below="@+id/phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/login_btn_selector"
+            android:text="@string/xiayibu"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/agreement"
+            style="@style/App.Preference.CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/next"
+            android:layout_marginTop="40dp"
+            android:text="我同意阅读"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/phone_addr"
+            android:layout_alignBottom="@+id/phone_addr"
+            android:layout_alignParentLeft="true"
+            android:textColor="#344bfe"
+            android:layout_marginLeft="5dip"
+            android:text="中国" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/phone_addr"
+            android:layout_alignBottom="@+id/phone_addr"
+            android:layout_toRightOf="@+id/textView2"
+            android:textColor="#344bfe"
+            android:layout_marginLeft="5dip"
+            android:text="+86" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:indeterminateDrawable="@anim/loading"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:layout_centerVertical="true" />
+
+	</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/body_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_header" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40.0dip"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:duplicateParentState="true"
+            android:text="本机设备: "
+            android:textColor="@color/btset_text"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/cur_device"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"              
+            android:textColor="@color/btset_text"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:duplicateParentState="true"
+            android:text="选定设备: "
+            android:textColor="@color/btset_text"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/selected_device"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"                  
+            android:textColor="@color/btset_text"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <com.healthme.app.widget.PullToRefreshListView
+        android:id="@+id/frame_listview_question"
+        android:layout_marginTop="30dip"
+        style="@style/widget_listview" />
+
+</LinearLayout>
