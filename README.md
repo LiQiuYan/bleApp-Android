@@ -3,7 +3,7 @@
 # VERSION: 1.0.0.0
 # USE: Used for transmission between Bluetooth devices and Android phones, and save the file to phone
 # DESC:
-  一款通用型蓝牙接收软件，该软件界面接单，易于使用。该软件运行在安卓系统高于4.4的手机中，通过ble4.0协议，接收蓝牙设备的数据，并将接收到的原始数据存放在   手机相应目录下。
+  一款通用型蓝牙接收软件，该软件界面简单，易于使用。该软件运行在安卓系统高于4.4的手机中，通过ble4.0协议，接收蓝牙设备的数据，并将接收到的原始数据存放在   手机相应目录下。
   遵循LGPL开源许可。
   此软件已在Android 4.4 系统的开发板上进行过测试。
   此项目基于google code项目开发。
